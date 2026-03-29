@@ -2,7 +2,7 @@
 
 ## Stack
 
-React 19.2 + Vite PWA + TailwindCSS + TypeScript + Supabase + pnpm
+React 19.2 + Vite PWA + TailwindCSS + TypeScript + Supabase + npm
 
 ---
 
@@ -70,7 +70,7 @@ gh issue comment NUMBER --body "PR opened: #PR_NUMBER"
 - **Commit messages:** `feat(#12): description` / `fix(#12): description` / `chore(#12): description`
 - **Do not merge PRs** — I handle that manually after review
 - **One PR per Issue** — never mix multiple Issues in one PR
-- **pnpm only** — not npm, not yarn
+- **npm only**
 - **Do not create files outside the scope of the Issue**
 
 ---
