@@ -24,3 +24,7 @@ dist-ssr
 supabase/.temp/
 supabase/functions/.env
 .supabase/
+
+# Design files
+design.pen
+

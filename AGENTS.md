@@ -2,7 +2,7 @@
 
 ## Stack
 
-React 19.2 + Vite PWA + TailwindCSS + TypeScript + Supabase + npm
+React 19.2 + Vite PWA + TailwindCSS + TypeScript + Supabase + npm + Shadcn
 
 ---
 
@@ -58,3 +58,13 @@ The full product spec is at `docs/PRD_v7.md` — read it before any task involvi
 feat: description (#issue)
 fix: description (#issue)
 chore: description
+
+## Documentation
+
+- `React 19.2` -[ www.react.dev](https://react.dev/)
+- `Vite PWA` -[ www.vitejs.dev](https://vite-pwa-org.netlify.app/)
+- `TailwindCSS` -[ www.tailwindcss.com](https://tailwindcss.com/docs/installation/using-vite)
+- `TypeScript` -[ www.typescriptlang.org](https://www.typescriptlang.org/docs/)
+- `Supabase` -[ www.supabase.com](https://supabase.com/docs)
+- `npm` -[ www.npmjs.com](https://www.npmjs.com/)
+- `Shadcn` -[ www.shadcn.com](https://ui.shadcn.com/)
