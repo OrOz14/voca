@@ -1,9 +1,193 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-* {
-  box-sizing: border-box;
+/* 1. Define CSS variables at root (NOT inside @layer base) */
+:root {
+  /* Voca Brand Colors */
+  --voca-primary: hsl(239 84% 67%);
+  --voca-primary-fg: hsl(0 0% 100%);
+  --voca-recording: hsl(348 86% 51%);
+  --voca-success: hsl(160 84% 39%);
+  --voca-success-fg: hsl(0 0% 100%);
+  
+  /* Voca Surface Colors */
+  --voca-bg: hsl(210 20% 98%);
+  --voca-surface: hsl(0 0% 100%);
+  --voca-border: hsl(210 11% 91%);
+  
+  /* Voca Text Colors */
+  --voca-text-primary: hsl(215 25% 27%);
+  --voca-text-secondary: hsl(215 16% 47%);
+  --voca-text-tertiary: hsl(216 8% 63%);
+  
+  /* Voca Font */
+  --voca-font: "Heebo", sans-serif;
+  
+  /* shadcn/ui compatible variables */
+  --background: hsl(210 20% 98%);
+  --foreground: hsl(215 25% 27%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(215 25% 27%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(215 25% 27%);
+  --primary: hsl(239 84% 67%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(210 11% 91%);
+  --secondary-foreground: hsl(215 25% 27%);
+  --muted: hsl(210 20% 98%);
+  --muted-foreground: hsl(0 0% 40%);
+  --accent: hsl(210 11% 91%);
+  --accent-foreground: hsl(215 25% 27%);
+  --destructive: hsl(12 82% 47%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(210 11% 91%);
+  --input: hsl(210 11% 91%);
+  --ring: hsl(0 0% 40%);
+  --radius: 0.625rem;
+  
+  /* Semantic colors */
+  --color-success: hsl(160 84% 39%);
+  --color-success-foreground: hsl(0 0% 100%);
+  --color-warning: hsl(32 75% 53%);
+  --color-warning-foreground: hsl(0 0% 100%);
+  --color-error: hsl(12 82% 47%);
+  --color-error-foreground: hsl(0 0% 100%);
+  --color-info: hsl(215 25% 27%);
+  --color-info-foreground: hsl(0 0% 100%);
 }
 
-body {
-  margin: 0;
+.dark {
+  /* Voca Brand Colors - Dark */
+  --voca-primary: hsl(239 84% 67%);
+  --voca-primary-fg: hsl(215 25% 27%);
+  --voca-recording: hsl(348 86% 51%);
+  --voca-success: hsl(160 84% 39%);
+  --voca-success-fg: hsl(215 25% 27%);
+  
+  /* Voca Surface Colors - Dark */
+  --voca-bg: hsl(215 25% 7%);
+  --voca-surface: hsl(215 25% 10%);
+  --voca-border: hsl(215 25% 18%);
+  
+  /* Voca Text Colors - Dark */
+  --voca-text-primary: hsl(210 40% 98%);
+  --voca-text-secondary: hsl(215 16% 72%);
+  --voca-text-tertiary: hsl(215 8% 47%);
+  
+  /* shadcn/ui compatible variables - Dark */
+  --background: hsl(215 25% 7%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(215 25% 10%);
+  --card-foreground: hsl(210 40% 98%);
+  --popover: hsl(215 25% 10%);
+  --popover-foreground: hsl(210 40% 98%);
+  --primary: hsl(239 84% 67%);
+  --primary-foreground: hsl(215 25% 27%);
+  --secondary: hsl(215 25% 18%);
+  --secondary-foreground: hsl(210 40% 98%);
+  --muted: hsl(215 25% 18%);
+  --muted-foreground: hsl(215 8% 72%);
+  --accent: hsl(215 25% 18%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(12 82% 61%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(215 25% 18%);
+  --input: hsl(215 25% 18%);
+  --ring: hsl(215 8% 72%);
+  
+  /* Semantic colors - Dark */
+  --color-success: hsl(160 84% 39%);
+  --color-success-foreground: hsl(215 25% 27%);
+  --color-warning: hsl(32 75% 53%);
+  --color-warning-foreground: hsl(215 25% 27%);
+  --color-error: hsl(12 82% 61%);
+  --color-error-foreground: hsl(210 40% 98%);
+  --color-info: hsl(215 25% 27%);
+  --color-info-foreground: hsl(210 40% 98%);
+}
+
+/* 2. Map variables to Tailwind utilities */
+@theme inline {
+  /* Voca Brand */
+  --color-voca-primary: var(--voca-primary);
+  --color-voca-primary-fg: var(--voca-primary-fg);
+  --color-voca-recording: var(--voca-recording);
+  --color-voca-success: var(--voca-success);
+  --color-voca-success-fg: var(--voca-success-fg);
+  
+  /* Voca Surface */
+  --color-voca-bg: var(--voca-bg);
+  --color-voca-surface: var(--voca-surface);
+  --color-voca-border: var(--voca-border);
+  
+  /* Voca Text */
+  --color-voca-text-primary: var(--voca-text-primary);
+  --color-voca-text-secondary: var(--voca-text-secondary);
+  --color-voca-text-tertiary: var(--voca-text-tertiary);
+  
+  /* shadcn/ui mapping */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  /* Semantic colors */
+  --color-success: var(--color-success);
+  --color-success-foreground: var(--color-success-foreground);
+  --color-warning: var(--color-warning);
+  --color-warning-foreground: var(--color-warning-foreground);
+  --color-error: var(--color-error);
+  --color-error-foreground: var(--color-error-foreground);
+  --color-info: var(--color-info);
+  --color-info-foreground: var(--color-info-foreground);
+  
+  /* Border radius */
+  --radius: var(--radius);
+}
+
+/* 3. Apply base styles (NO hsl() wrapper here) */
+@layer base {
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    background-color: var(--voca-bg);
+    color: var(--voca-text-primary);
+    font-family: var(--voca-font);
+    margin: 0;
+    direction: rtl;
+  }
+  
+  * {
+    box-sizing: border-box;
+    border-color: var(--voca-border);
+  }
+  
+  .font-primary {
+    font-family: var(--voca-font), sans-serif;
+  }
+  
+  .font-heading {
+    font-family: "Geist", sans-serif;
+  }
+  
+  .font-mono {
+    font-family: "Geist Mono", monospace;
+  }
 }
