@@ -28,3 +28,4 @@ supabase/functions/.env
 # Design files
 design.pen
 
+.vercel
